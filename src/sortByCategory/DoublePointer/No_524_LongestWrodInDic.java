@@ -37,5 +37,4 @@ public class No_524_LongestWrodInDic {
         }
         return j == target.length();
     }
-
 }
