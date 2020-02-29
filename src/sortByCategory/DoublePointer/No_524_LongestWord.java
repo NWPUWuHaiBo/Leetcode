@@ -4,9 +4,9 @@ import java.util.List;
 
 /**
  * @author haiboWu
- * @create 2020-02-28 19:09
+ * @create 2020-02-29 16:56
  */
-public class No_524_LongestWrodInDic {
+public class No_524_LongestWord {
     public String findLongestWord(String s, List<String> d) {
         if (d.size() == 0) return "";
         String longestWord = "";
@@ -19,14 +19,11 @@ public class No_524_LongestWrodInDic {
             if (isSubstr(s, target)) {
                 longestWord = target;
             }
-
         }
         return longestWord;
-
     }
 
     public boolean isSubstr(String src, String target) {
-
         int i = 0;
         int j = 0;
         while (i < src.length() && j < target.length()) {
