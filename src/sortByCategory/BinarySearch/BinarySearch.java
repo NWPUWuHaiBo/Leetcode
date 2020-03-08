@@ -43,7 +43,7 @@ public class BinarySearch {
                 left=mid+1;
             }
         }
-        if(left>a.length||a[left]!=target){
+        if(left>=a.length||a[left]!=target){
             return -1;
         }
         return left;
