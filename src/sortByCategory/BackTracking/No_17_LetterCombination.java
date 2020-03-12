@@ -48,7 +48,7 @@ public class No_17_LetterCombination {
         }
     }
 
-    public char[] getLetter(int num) {
+    private char[] getLetter(int num) {
         if (num == '2') {
             char nums[] = {'a', 'b', 'c'};
             return nums;
