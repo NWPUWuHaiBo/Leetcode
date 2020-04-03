@@ -6,7 +6,6 @@ package sortByCategory.BinarySearch;
  */
 public class No_69_Sqrt {
     /**
-     *
      * 求一个数的开方，并向下取整
      * [1,x] 这个区间进行二分查找
      * sqrt与当前值比较,进行区间缩减
@@ -19,9 +18,9 @@ public class No_69_Sqrt {
             int mid = left + (right - left) / 2;
             int sqrt = x / mid;
             if (sqrt > mid) {
-                left = mid+1;
+                left = mid + 1;
             } else if (sqrt < mid) {
-                right = mid-1;
+                right = mid - 1;
             } else {
                 return mid;
             }
