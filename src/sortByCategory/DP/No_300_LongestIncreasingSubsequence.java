@@ -2,6 +2,8 @@ package sortByCategory.DP;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * @author haiboWu
  * @create 2020-04-05 19:58
@@ -32,5 +34,22 @@ public class No_300_LongestIncreasingSubsequence {
             maxAns=Math.max(max,dp[i]);
         }
         return maxAns;
+    }
+
+    public int lengthOfLIS2(int nums[]){
+        if(nums.length==1)return 1;
+        int res=1;
+        int dp[]=new int[nums.length+1];
+        Arrays.fill(dp,1);
+        for (int i = 1; i <nums.length ; i++) {
+            for (int j = 0; j < i; j++) {
+                if(nums[i]>nums[j]){
+                    dp[i]=Math.max(dp[j]+1,dp[i]);
+                }
+            }
+            res=Math.max(res,dp[i]);
+
+        }
+        return res;
     }
 }
