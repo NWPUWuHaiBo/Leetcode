@@ -4,7 +4,7 @@ package Algorithm;
  * @author haiboWu
  * @create 2020-05-14 23:15
  */
-public class No_01_luoxuanMatrix {
+public class No_01_LuoxuanMatrix {
     public static void main(String[] args) {
 
         getMatrix(3);
