@@ -5,6 +5,9 @@ package Algorithm;
  * @create 2020-05-15 8:00
  */
 public class No_02_LuckyNumber {
+    /**
+     * 逐个遍历
+     */
     public static void main(String[] args) {
         int res = getLucyNumber(21);
         System.out.println(res);

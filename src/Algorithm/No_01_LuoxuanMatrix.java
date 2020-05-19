@@ -5,9 +5,19 @@ package Algorithm;
  * @create 2020-05-14 23:15
  */
 public class No_01_LuoxuanMatrix {
-    public static void main(String[] args) {
+    /**
+     * 按照上、右、下、左四条路径
+     * 每次走最外侧长度的n-1步长
+     *
+     */
 
+    public static void main(String[] args) {
+        System.out.println("3---");
         getMatrix(3);
+        System.out.println("4---");
+        getMatrix(4);
+        System.out.println("5---");
+        getMatrix(5);
     }
 
     private static void getMatrix(int n) {
@@ -16,7 +26,6 @@ public class No_01_LuoxuanMatrix {
         int l = 0;
         int i = 1;
         for (int k = n; k > 0; k = k - 2) {
-            System.out.println(l+"---");
             //up
             for (int j = 0; j < k - 1; j++) {
                 matrix[l][j + l] = i++;
