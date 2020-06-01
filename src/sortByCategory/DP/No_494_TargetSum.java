@@ -12,10 +12,12 @@ public class No_494_TargetSum {
         System.out.println(ways);
     }
 
+
     private static int getTargetSum(int[] nums, int S) {
         if (nums.length == 0) return 0;
         int sum = ComputeSum(nums);
         if (Math.abs(S) > sum) return 0;
+        //dp[i][j]表示：用前i个物品，背包容量为j，的所有方案数
         int[][] dp = new int[nums.length + 1][sum * 2 + 1];
         if (nums[0] == 0) dp[0][sum] = 2;
         else {

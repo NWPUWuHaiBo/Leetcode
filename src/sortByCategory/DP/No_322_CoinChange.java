@@ -2,6 +2,9 @@ package sortByCategory.DP;
 
 import org.junit.Test;
 
+import javax.swing.*;
+import java.util.Arrays;
+
 /**
  * @author haiboWu
  * @create 2020-03-23 20:26
@@ -10,10 +13,28 @@ public class No_322_CoinChange {
     @Test
     public void Test() {
         int coins[] = {1, 2, 5};
-        System.out.println(coinChange(coins, 11));
+        int coins2[] = {2};
+        System.out.println(coinChange3(coins, 11));
     }
 
     int res = Integer.MAX_VALUE;
+
+
+    public int coinChange3(int[] coins, int amount) {
+        if (coins.length == 0 || amount < 0) return -1;
+        int dp[] = new int[amount + 1];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+        dp[0] = 0;
+        for (int coin : coins) {
+            for (int i = 1; i < amount + 1; i++) {
+
+                if (i >= coin && dp[i - coin] != Integer.MAX_VALUE) {
+                    dp[i] = Math.min(dp[i], 1 + dp[i - coin]);
+                }
+            }
+        }
+        return dp[amount] == Integer.MAX_VALUE ? -1 : dp[amount];
+    }
 
     public int coinChange(int[] coins, int amount) {
         if (coins.length == 0) return -1;
@@ -43,27 +64,27 @@ public class No_322_CoinChange {
     private int coinChange2(int[] coins, int amount) {
         if (coins.length == 0) return -1;
         int bw[] = new int[amount];
-        return beiwang(coins, amount,bw);
+        return beiwang(coins, amount, bw);
     }
 
-    private int beiwang(int[] coins, int amount,int bw[]) {
-        if(amount<0){
+    private int beiwang(int[] coins, int amount, int bw[]) {
+        if (amount < 0) {
             return -1;
         }
-        if(amount==0){
+        if (amount == 0) {
             return 0;
         }
-        if(bw[amount-1]!=0){
-            return bw[amount-1];
+        if (bw[amount - 1] != 0) {
+            return bw[amount - 1];
         }
-        int min=Integer.MAX_VALUE;
+        int min = Integer.MAX_VALUE;
         for (int i = 0; i < coins.length; i++) {
-            int res=beiwang(coins,amount-coins[i],bw);
-            if(res>=0&&res<min){
-                min=res+1;
+            int res = beiwang(coins, amount - coins[i], bw);
+            if (res >= 0 && res < min) {
+                min = res + 1;
             }
         }
-        bw[amount-1]=(min==Integer.MAX_VALUE?-1:min);
-        return bw[amount-1];
+        bw[amount - 1] = (min == Integer.MAX_VALUE ? -1 : min);
+        return bw[amount - 1];
     }
 }
