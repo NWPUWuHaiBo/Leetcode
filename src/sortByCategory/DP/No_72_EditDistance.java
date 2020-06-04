@@ -12,7 +12,7 @@ public class No_72_EditDistance {
 
     }
 
-    public static int minDistance(String word1, String word2) {
+    private static int minDistance(String word1, String word2) {
         int dp[][] = new int[word1.length() + 1][word2.length() + 1];
         for (int i = 0; i < word1.length() + 1; i++) {
             dp[i][0] = i;
