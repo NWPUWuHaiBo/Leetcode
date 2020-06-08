@@ -4,7 +4,7 @@ package sortByCategory.LinkedList;
  * @author haiboWu
  * @create 2020-06-06 16:45
  */
-public class Intersection {
+public class No_160_Intersection {
     public static void main(String[] args) {
 
     }

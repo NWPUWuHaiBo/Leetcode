@@ -4,7 +4,7 @@ package sortByCategory.LinkedList;
  * @author haiboWu
  * @create 2020-06-06 18:54
  */
-public class ReverseLinkList {
+public class No_206_ReverseLinkList {
     public ListNode reverseList(ListNode head) {
         ListNode pre = null;
         ListNode cur = head;
