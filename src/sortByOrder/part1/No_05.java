@@ -1,4 +1,5 @@
 package sortByOrder.part1;
+
 /**
  * @author haiboWu
  * @create 2020-01-30 19:20
@@ -10,7 +11,7 @@ public class No_05 {
         System.out.println(longestPalindrome("babad"));
     }
 
-    public static  String longestPalindrome(String s) {
+    public static String longestPalindrome(String s) {
         int n = s.length();
         if (n < 2) {
             return s;
@@ -43,6 +44,6 @@ public class No_05 {
                 }
             }
         }
-        return s.substring(start, start+maxLen);
+        return s.substring(start, start + maxLen);
     }
 }

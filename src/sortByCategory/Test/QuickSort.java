@@ -34,8 +34,7 @@ public class QuickSort {
             }
             arr[right] = arr[left];
         }
-        arr[left] = tmp;
-        return left;
+        arr[right] = tmp;
+        return right;
     }
-
 }
