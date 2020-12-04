@@ -1,6 +1,7 @@
 package sortByCategory.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
@@ -9,7 +10,21 @@ import java.util.concurrent.CountDownLatch;
  * @create 2020-06-10 13:25
  */
 public class Test {
-
+    public int findLongestChain(int[][] pairs) {
+        if (pairs == null || pairs.length == 0) return 0;
+        int[] dp = new int[pairs.length];
+        dp[0] = 1;
+        for (int i = 1; i < pairs.length; i++) {
+            int max=1;
+            for (int j = 0; j < i; j++) {
+                if(pairs[i][0]>pairs[j][1]){
+                    max=Math.max(max,dp[j]+1);
+                }
+            }
+            dp[i]=max;
+        }
+        return Arrays.stream(dp).max().orElse(0);
+    }
 
     public static void main(String[] args) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
