@@ -5,6 +5,51 @@ package sortByCategory.BackTracking;
  * @create 2020-03-13 19:36
  */
 public class No_79_WordSearch {
+    public static void main(String[] args) {
+
+        /**
+         * :[["A","B","C","E"],["S","F","E","S"],["A","D","E","E"]]
+         * 			"ABCESEEEFS"
+         */
+
+
+        char[][] board = new char[][]{{'A', 'B', 'C', 'E'}, {'S', 'F', 'E', 'S'}, {'A', 'D', 'E', 'E'}};
+        System.out.println(new No_79_WordSearch().exist(board, "ABCESEEEFS"));
+    }
+
+    /*   public boolean exist(char[][] board, String word) {
+           boolean visited[][] = new boolean[board.length][board[0].length];
+
+           for (int i = 0; i < board.length; i++) {
+               for (int j = 0; j < board[0].length; j++) {
+                   if (board[i][j] == word.charAt(0)) {
+                       dfs(board, word, 0, i, j, visited);
+                       if (flag) {
+                           return true;
+                       }
+                   }
+               }
+           }
+           return false;
+       }
+
+       int[][] directions = new int[][]{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+       boolean flag = false;
+
+       private void dfs(char[][] board, String word, int index, int i, int j, boolean[][] visited) {
+           if (index == word.length()) {
+               flag = true;
+               return;
+           }
+           if (i >= board.length || i < 0 || j >= board[0].length || j < 0 || board[i][j] != word.charAt(index) || visited[i][j]) {
+               return;
+           }
+           for (int[] dir : directions) {
+               visited[i][j] = true;
+               dfs(board, word, index + 1, i + dir[0], j + dir[1], visited);
+               visited[i][j] = false;
+           }
+       }*/
     private final static int directions[][] = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
     public boolean exist(char[][] board, String word) {

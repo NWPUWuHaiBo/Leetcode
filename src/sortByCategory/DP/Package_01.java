@@ -10,6 +10,7 @@ public class Package_01 {
         int w[] = {2, 3, 4, 7};
         int v[] = {1, 3, 5, 9};
         int max = getMaxValue(weight, w, v);
+        int max2 = getMaxValue2(weight, w, v);
         System.out.println(max);
     }
 
